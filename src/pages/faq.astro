@@ -1,248 +1,281 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import ShaderBackground from '../components/ShaderBackground.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ShaderBackground from "../components/ShaderBackground.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <BaseLayout
-  title="FAQs — Veternity Beraksi"
-  description="Frequently asked questions about Veternity Beraksi IT competition, including registration, timeline, tracks, and submission rules."
+    title="FAQs - Veternity Beraksi"
+    description="Frequently asked questions about Veternity Beraksi IT competition, including registration, timeline, tracks, and submission rules."
 >
-  <ShaderBackground />
-  <div class="halftone-overlay" aria-hidden="true"></div>
+    <ShaderBackground />
+    <div class="halftone-overlay" aria-hidden="true"></div>
 
-  <Header />
+    <Header />
 
-  <main id="main-content">
-    <!-- FAQs Hero Section -->
-    <section class="faq-hero">
-      <div class="ghost-label faq-ghost" aria-hidden="true">FAQ</div>
-      <div class="container relative z-10">
-        <h1 class="faq-title">
-          <span class="faq-title-line1">GOT</span>
-          <span class="faq-title-line2">QUESTIONS?</span>
-        </h1>
-        <p class="faq-sub">
-          Everything you need to know about Veternity Beraksi. If you cannot find the answer here, feel free to contact us.
-        </p>
-      </div>
-    </section>
-
-    <!-- Accordion Section -->
-    <section class="faq-accordion-section">
-      <div class="container">
-        <div class="accordion-wrap">
-          
-          <details class="faq-details" open>
-            <summary class="faq-summary">
-              <span class="faq-question">Who is eligible to participate in Veternity Beraksi?</span>
-              <span class="faq-icon" aria-hidden="true">★</span>
-            </summary>
-            <div class="faq-content">
-              <p>
-                The competition is open to all high school, vocational school, and university students across Indonesia. IT enthusiasts who meet our general terms are also welcome. Some tracks may require teams of 1 to 3 members.
-              </p>
+    <main id="main-content">
+        <!-- FAQs Hero Section -->
+        <section class="faq-hero">
+            <div class="ghost-label faq-ghost" aria-hidden="true">FAQ</div>
+            <div class="container relative z-10">
+                <h1 class="faq-title">
+                    <span class="faq-title-line1">GOT</span>
+                    <span class="faq-title-line2">QUESTIONS?</span>
+                </h1>
+                <p class="faq-sub">
+                    Everything you need to know about Veternity Beraksi. If you
+                    cannot find the answer here, feel free to contact us.
+                </p>
             </div>
-          </details>
+        </section>
 
-          <details class="faq-details">
-            <summary class="faq-summary">
-              <span class="faq-question">Are there any registration fees?</span>
-              <span class="faq-icon" aria-hidden="true">★</span>
-            </summary>
-            <div class="faq-content">
-              <p>
-                No! Registration for all tracks (Web Development, UI/UX Design, Competitive Programming, and Business Plan) is completely free of charge.
-              </p>
+        <!-- Accordion Section -->
+        <section class="faq-accordion-section">
+            <div class="container">
+                <div class="accordion-wrap">
+                    <details class="faq-details" open>
+                        <summary class="faq-summary">
+                            <span class="faq-question"
+                                >Who is eligible to participate in Veternity
+                                Beraksi?</span
+                            >
+                            <span class="faq-icon" aria-hidden="true">★</span>
+                        </summary>
+                        <div class="faq-content">
+                            <p>
+                                The competition is open to all high school,
+                                vocational school, and university students
+                                across Indonesia. IT enthusiasts who meet our
+                                general terms are also welcome. Some tracks may
+                                require teams of 1 to 3 members.
+                            </p>
+                        </div>
+                    </details>
+
+                    <details class="faq-details">
+                        <summary class="faq-summary">
+                            <span class="faq-question"
+                                >Are there any registration fees?</span
+                            >
+                            <span class="faq-icon" aria-hidden="true">★</span>
+                        </summary>
+                        <div class="faq-content">
+                            <p>
+                                No! Registration for all tracks (Web
+                                Development, UI/UX Design, Competitive
+                                Programming, and Business Plan) is completely
+                                free of charge.
+                            </p>
+                        </div>
+                    </details>
+
+                    <details class="faq-details">
+                        <summary class="faq-summary">
+                            <span class="faq-question"
+                                >Can I register for multiple tracks at the same
+                                time?</span
+                            >
+                            <span class="faq-icon" aria-hidden="true">★</span>
+                        </summary>
+                        <div class="faq-content">
+                            <p>
+                                To maintain focus and guarantee the highest
+                                quality of submissions, each participant can
+                                only be registered as a primary member in one
+                                track.
+                            </p>
+                        </div>
+                    </details>
+
+                    <details class="faq-details">
+                        <summary class="faq-summary">
+                            <span class="faq-question"
+                                >How does project submission work?</span
+                            >
+                            <span class="faq-icon" aria-hidden="true">★</span>
+                        </summary>
+                        <div class="faq-content">
+                            <p>
+                                Submissions will be managed through our portal.
+                                Web Dev projects must be deployed online (e.g.,
+                                Cloudflare Pages) and source code submitted.
+                                UI/UX and Business Plan submissions require a
+                                presentation document/link. Complete guidelines
+                                will be detailed in the Technical Meeting.
+                            </p>
+                        </div>
+                    </details>
+
+                    <details class="faq-details">
+                        <summary class="faq-summary">
+                            <span class="faq-question"
+                                >What is the total prize pool distribution?</span
+                            >
+                            <span class="faq-icon" aria-hidden="true">★</span>
+                        </summary>
+                        <div class="faq-content">
+                            <p>
+                                The total prize pool is IDR 5,000,000. It will
+                                be distributed among the top winners in all four
+                                tracks, alongside official certificates and
+                                plaques of achievement.
+                            </p>
+                        </div>
+                    </details>
+                </div>
             </div>
-          </details>
+        </section>
+    </main>
 
-          <details class="faq-details">
-            <summary class="faq-summary">
-              <span class="faq-question">Can I register for multiple tracks at the same time?</span>
-              <span class="faq-icon" aria-hidden="true">★</span>
-            </summary>
-            <div class="faq-content">
-              <p>
-                To maintain focus and guarantee the highest quality of submissions, each participant can only be registered as a primary member in one track.
-              </p>
-            </div>
-          </details>
-
-          <details class="faq-details">
-            <summary class="faq-summary">
-              <span class="faq-question">How does project submission work?</span>
-              <span class="faq-icon" aria-hidden="true">★</span>
-            </summary>
-            <div class="faq-content">
-              <p>
-                Submissions will be managed through our portal. Web Dev projects must be deployed online (e.g., Cloudflare Pages) and source code submitted. UI/UX and Business Plan submissions require a presentation document/link. Complete guidelines will be detailed in the Technical Meeting.
-              </p>
-            </div>
-          </details>
-
-          <details class="faq-details">
-            <summary class="faq-summary">
-              <span class="faq-question">What is the total prize pool distribution?</span>
-              <span class="faq-icon" aria-hidden="true">★</span>
-            </summary>
-            <div class="faq-content">
-              <p>
-                The total prize pool is IDR 5,000,000. It will be distributed among the top winners in all four tracks, alongside official certificates and plaques of achievement.
-              </p>
-            </div>
-          </details>
-
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <Footer />
+    <Footer />
 </BaseLayout>
 
 <style>
-  .halftone-overlay {
-    position: fixed;
-    inset: 0;
-    background-image: radial-gradient(#11144c 20%, transparent 20%);
-    background-size: 10px 10px;
-    opacity: 0.05;
-    pointer-events: none;
-    z-index: -1;
-  }
+    .halftone-overlay {
+        position: fixed;
+        inset: 0;
+        background-image: radial-gradient(#11144c 20%, transparent 20%);
+        background-size: 10px 10px;
+        opacity: 0.05;
+        pointer-events: none;
+        z-index: -1;
+    }
 
-  :global(html) {
-    scroll-padding-top: 72px;
-  }
+    :global(html) {
+        scroll-padding-top: 72px;
+    }
 
-  /* FAQs Hero */
-  .faq-hero {
-    position: relative;
-    padding-top: clamp(4rem, 8vw, 6rem);
-    padding-bottom: clamp(3rem, 6vw, 4.5rem);
-    border-bottom: 2px dashed var(--color-navy);
-    overflow: hidden;
-  }
+    /* FAQs Hero */
+    .faq-hero {
+        position: relative;
+        padding-top: clamp(4rem, 8vw, 6rem);
+        padding-bottom: clamp(3rem, 6vw, 4.5rem);
+        border-bottom: 2px dashed var(--color-navy);
+        overflow: hidden;
+    }
 
-  .faq-ghost {
-    position: absolute;
-    top: 50%;
-    right: -2rem;
-    transform: translateY(-50%);
-    font-size: clamp(6rem, 18vw, 12rem);
-    line-height: 1;
-    z-index: 0;
-  }
+    .faq-ghost {
+        position: absolute;
+        top: 50%;
+        right: -2rem;
+        transform: translateY(-50%);
+        font-size: clamp(6rem, 18vw, 12rem);
+        line-height: 1;
+        z-index: 0;
+    }
 
-  .faq-title {
-    display: flex;
-    flex-direction: column;
-    font-family: var(--font-display);
-    font-weight: 800;
-    line-height: 0.88;
-    letter-spacing: -0.04em;
-    text-transform: uppercase;
-    margin-bottom: var(--space-6);
-  }
+    .faq-title {
+        display: flex;
+        flex-direction: column;
+        font-family: var(--font-display);
+        font-weight: 800;
+        line-height: 0.88;
+        letter-spacing: -0.04em;
+        text-transform: uppercase;
+        margin-bottom: var(--space-6);
+    }
 
-  .faq-title-line1 {
-    font-size: clamp(3.5rem, 10vw, 8.5rem);
-    color: var(--color-navy);
-    transform: rotate(-1deg);
-    display: inline-block;
-  }
+    .faq-title-line1 {
+        font-size: clamp(3.5rem, 10vw, 8.5rem);
+        color: var(--color-navy);
+        transform: rotate(-1deg);
+        display: inline-block;
+    }
 
-  .faq-title-line2 {
-    font-size: clamp(3.5rem, 10vw, 8.5rem);
-    color: var(--color-indigo);
-    transform: rotate(2deg);
-    margin-left: var(--space-4);
-    display: inline-block;
-    -webkit-text-stroke: 2px var(--color-navy);
-    paint-order: stroke fill;
-  }
+    .faq-title-line2 {
+        font-size: clamp(3.5rem, 10vw, 8.5rem);
+        color: var(--color-indigo);
+        transform: rotate(2deg);
+        margin-left: var(--space-4);
+        display: inline-block;
+        -webkit-text-stroke: 2px var(--color-navy);
+        paint-order: stroke fill;
+    }
 
-  .faq-sub {
-    font-size: clamp(1rem, 2vw, 1.25rem);
-    font-weight: 500;
-    line-height: 1.6;
-    max-width: 38rem;
-    color: var(--color-navy);
-    opacity: 0.9;
-  }
+    .faq-sub {
+        font-size: clamp(1rem, 2vw, 1.25rem);
+        font-weight: 500;
+        line-height: 1.6;
+        max-width: 38rem;
+        color: var(--color-navy);
+        opacity: 0.9;
+    }
 
-  /* Accordion Layout */
-  .faq-accordion-section {
-    padding-block: clamp(4rem, 8vw, 6rem);
-  }
+    /* Accordion Layout */
+    .faq-accordion-section {
+        padding-block: clamp(4rem, 8vw, 6rem);
+    }
 
-  .accordion-wrap {
-    max-width: 800px;
-    margin-inline: auto;
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-4);
-  }
+    .accordion-wrap {
+        max-width: 800px;
+        margin-inline: auto;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-4);
+    }
 
-  /* details tag styling */
-  .faq-details {
-    border: 2px solid var(--color-navy);
-    background: var(--color-white);
-    box-shadow: var(--shadow-sm);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  .faq-details[open] {
-    box-shadow: var(--shadow-md);
-    transform: translate(-2px, -2px);
-  }
+    /* details tag styling */
+    .faq-details {
+        border: 2px solid var(--color-navy);
+        background: var(--color-white);
+        box-shadow: var(--shadow-sm);
+        transition:
+            transform 0.2s ease,
+            box-shadow 0.2s ease;
+    }
+    .faq-details[open] {
+        box-shadow: var(--shadow-md);
+        transform: translate(-2px, -2px);
+    }
 
-  /* summary tag styling */
-  .faq-summary {
-    list-style: none;
-    outline: none;
-    cursor: pointer;
-    padding: var(--space-5) var(--space-6);
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: clamp(1.125rem, 2vw, 1.375rem);
-    text-transform: uppercase;
-    color: var(--color-navy);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--space-4);
-    transition: background-color 0.2s ease;
-  }
-  .faq-summary::-webkit-details-marker {
-    display: none;
-  }
-  .faq-summary:hover {
-    background-color: var(--color-lime);
-  }
+    /* summary tag styling */
+    .faq-summary {
+        list-style: none;
+        outline: none;
+        cursor: pointer;
+        padding: var(--space-5) var(--space-6);
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: clamp(1.125rem, 2vw, 1.375rem);
+        text-transform: uppercase;
+        color: var(--color-navy);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-4);
+        transition: background-color 0.2s ease;
+    }
+    .faq-summary::-webkit-details-marker {
+        display: none;
+    }
+    .faq-summary:hover {
+        background-color: var(--color-lime);
+    }
 
-  /* Icon flip on details open */
-  .faq-icon {
-    font-size: 1.25rem;
-    transition: transform 0.3s ease, color 0.3s ease;
-    color: var(--color-indigo);
-  }
-  .faq-details[open] .faq-icon {
-    transform: rotate(45deg);
-    color: var(--color-navy);
-  }
+    /* Icon flip on details open */
+    .faq-icon {
+        font-size: 1.25rem;
+        transition:
+            transform 0.3s ease,
+            color 0.3s ease;
+        color: var(--color-indigo);
+    }
+    .faq-details[open] .faq-icon {
+        transform: rotate(45deg);
+        color: var(--color-navy);
+    }
 
-  /* Content area details open */
-  .faq-content {
-    border-top: 2px solid var(--color-navy);
-    padding: var(--space-5) var(--space-6);
-    background-color: var(--color-offwhite);
-    font-size: 0.9375rem;
-    line-height: 1.6;
-    color: var(--color-navy);
-  }
-  .faq-content p {
-    margin-bottom: 0;
-  }
+    /* Content area details open */
+    .faq-content {
+        border-top: 2px solid var(--color-navy);
+        padding: var(--space-5) var(--space-6);
+        background-color: var(--color-offwhite);
+        font-size: 0.9375rem;
+        line-height: 1.6;
+        color: var(--color-navy);
+    }
+    .faq-content p {
+        margin-bottom: 0;
+    }
 </style>
