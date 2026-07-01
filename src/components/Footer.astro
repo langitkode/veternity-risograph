@@ -10,8 +10,11 @@
 
     <!-- Logo block -->
     <div class="footer-logo">
-      <span class="footer-logo-1">VETERNITY</span>
-      <span class="footer-logo-2">BERAKSI</span>
+      <img src="/logo.svg" alt="" class="footer-logo-img" aria-hidden="true" />
+      <div class="footer-logo-text">
+        <span class="footer-logo-1">VETERNITY</span>
+        <span class="footer-logo-2">BERAKSI</span>
+      </div>
     </div>
 
     <!-- Link columns -->
@@ -102,7 +105,9 @@
   /* Logo */
   .footer-logo {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-3);
     font-family: var(--font-display);
     font-weight: 800;
     font-size: clamp(1.75rem, 4vw, 3rem);
@@ -110,6 +115,14 @@
     text-transform: uppercase;
     transform: rotate(-2deg);
     flex-shrink: 0;
+  }
+  .footer-logo-img {
+    height: 44px;
+    width: 44px;
+  }
+  .footer-logo-text {
+    display: flex;
+    flex-direction: column;
   }
   .footer-logo-1 {
     background: var(--color-navy);
