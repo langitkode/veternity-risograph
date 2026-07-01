@@ -1,0 +1,224 @@
+---
+// HeroSection.astro — Massive editorial hero with SVG geometric graphic
+---
+
+<section class="hero-section" id="hero">
+  <!-- Ghost background label -->
+  <div class="ghost-label hero-ghost" aria-hidden="true">01 INTRO</div>
+
+  <div class="hero-inner container">
+    <!-- Left: Text -->
+    <div class="hero-text">
+      <h1 class="hero-title">
+        <span class="hero-title-line1">VETERNITY</span>
+        <span class="hero-title-line2">BERAKSI</span>
+      </h1>
+
+      <p class="hero-sub">
+        The premier IT competition for developers,<br />
+        designers, and innovators. Prove your skills.
+      </p>
+
+      <div class="hero-cta-wrap">
+        <!-- Skewed lime backing for neo-brutalist effect -->
+        <div class="hero-cta-backing" aria-hidden="true"></div>
+        <a href="#tracks" class="btn-hero">Join Now</a>
+      </div>
+    </div>
+
+    <!-- Right: SVG Geometric Graphic -->
+    <div class="hero-graphic animate-drift" aria-hidden="true">
+      <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+        <defs>
+          <pattern id="heroGrid" patternUnits="userSpaceOnUse" width="20" height="20">
+            <circle cx="2" cy="2" r="2" fill="#11144c" opacity="0.28" />
+          </pattern>
+        </defs>
+
+        <!-- Dot-pattern backdrop -->
+        <rect x="25" y="25" width="350" height="350" fill="url(#heroGrid)" stroke="#11144c" stroke-width="2" />
+
+        <!-- Lime rectangle -->
+        <rect x="150" y="50" width="200" height="200" fill="#c4f383" stroke="#11144c" stroke-width="4" />
+
+        <!-- Indigo circle -->
+        <circle cx="150" cy="250" r="100" fill="#4f53a8" stroke="#11144c" stroke-width="4" />
+
+        <!-- Heavy X strokes -->
+        <g stroke="#11144c" stroke-linecap="square" stroke-width="40">
+          <line x1="380" y1="20" x2="20" y2="380" />
+          <polyline points="280,20 380,20 380,120" fill="none" stroke-linejoin="miter" />
+          <!-- Lighter inner X line in offwhite -->
+          <line x1="20"  y1="20" x2="380" y2="380" stroke="#f2f1e8" stroke-width="20" />
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Floating decorative dots -->
+  <div class="deco-circle-sm animate-drift" style="--delay:0s"  aria-hidden="true">
+    <div class="deco-inner-dot"></div>
+  </div>
+  <div class="deco-star animate-spin-slow" aria-hidden="true">★</div>
+</section>
+
+<style>
+  .hero-section {
+    position: relative;
+    width: 100%;
+    padding-top: clamp(4rem, 8vw, 7rem);
+    padding-bottom: clamp(4rem, 8vw, 8rem);
+    border-bottom: 2px dashed var(--color-navy);
+    overflow: hidden;
+  }
+
+  /* Ghost background label */
+  .hero-ghost {
+    position: absolute;
+    top: -1rem;
+    left: -1rem;
+    font-size: clamp(4rem, 12vw, 9rem);
+    transform: rotate(-90deg);
+    transform-origin: bottom left;
+    white-space: nowrap;
+  }
+
+  /* Inner layout */
+  .hero-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-10);
+    position: relative;
+    z-index: 2;
+  }
+  @media (min-width: 768px) {
+    .hero-inner {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  /* Hero text block */
+  .hero-text {
+    flex: 0 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    z-index: 3;
+  }
+  @media (min-width: 768px) {
+    .hero-text { width: 58%; }
+  }
+
+  /* Massive display title */
+  .hero-title {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-display);
+    font-weight: 800;
+    line-height: 0.87;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    margin: 0;
+    mix-blend-mode: multiply;
+  }
+
+  .hero-title-line1 {
+    font-size: clamp(3.5rem, 14vw, 12.5rem);
+    color: var(--color-navy);
+    transform: rotate(-2deg);
+    display: inline-block;
+  }
+
+  .hero-title-line2 {
+    font-size: clamp(3.5rem, 14vw, 12.5rem);
+    color: var(--color-indigo);
+    transform: rotate(1deg);
+    margin-left: clamp(0.5rem, 2vw, 1.5rem);
+    display: inline-block;
+  }
+
+  /* Sub-headline */
+  .hero-sub {
+    font-family: var(--font-body);
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    font-weight: 500;
+    line-height: 1.6;
+    color: var(--color-navy);
+    margin-top: var(--space-6);
+    margin-left: var(--space-2);
+    opacity: 0.8;
+  }
+
+  /* CTA area */
+  .hero-cta-wrap {
+    position: relative;
+    margin-top: var(--space-8);
+    margin-left: var(--space-2);
+    display: inline-block;
+  }
+
+  /* Skewed lime backing — purely visual accent */
+  .hero-cta-backing {
+    position: absolute;
+    inset: -4px;
+    background: var(--color-lime);
+    border: 2px solid var(--color-navy);
+    transform: skewX(12deg);
+    z-index: 0;
+  }
+
+  /* Hero graphic */
+  .hero-graphic {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 420px;
+    aspect-ratio: 1;
+    position: relative;
+    z-index: 2;
+    align-self: center;
+  }
+  @media (min-width: 768px) {
+    .hero-graphic { width: 40%; }
+  }
+
+  /* Floating decorative elements */
+  .deco-circle-sm {
+    position: absolute;
+    top: clamp(5rem, 12vw, 9rem);
+    left: clamp(0.5rem, 2vw, 1rem);
+    width: 48px; height: 48px;
+    background: var(--color-lime);
+    border: 2px solid var(--color-navy);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: var(--shadow-sm);
+    z-index: 1;
+    animation-delay: var(--delay, 0s);
+  }
+
+  .deco-inner-dot {
+    width: 14px; height: 14px;
+    background: var(--color-navy);
+    border-radius: 50%;
+  }
+
+  .deco-star {
+    position: absolute;
+    top: clamp(10rem, 20vw, 17rem);
+    right: clamp(0.75rem, 3vw, 3rem);
+    width: 56px; height: 56px;
+    background: var(--color-indigo);
+    border: 2px solid var(--color-navy);
+    box-shadow: var(--shadow-sm);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--color-lime);
+    z-index: 1;
+  }
+</style>

@@ -1,0 +1,246 @@
+---
+// TracksSection.astro — Competition track cards
+---
+
+<section class="tracks-section" id="tracks">
+  <!-- Ghost background label -->
+  <div class="ghost-label tracks-ghost" aria-hidden="true">TRACKS</div>
+
+  <div class="container">
+    <h2 class="tracks-heading">
+      <span class="tracks-heading-text">Choose Your Path</span>
+      <span class="tracks-heading-accent" aria-hidden="true"></span>
+    </h2>
+
+    <div class="tracks-grid">
+
+      <!-- Track 1: Web Development -->
+      <article class="track-card track-card--white">
+        <div class="track-card-dot track-card-dot--tr" aria-hidden="true"></div>
+        <div class="track-card-header">
+          <h3 class="track-card-title">Web<br/>Development</h3>
+          <div class="track-card-graphic">
+            <svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg" class="animate-drift" aria-hidden="true">
+              <rect x="20" y="20" width="160" height="110" fill="#c4f383" stroke="#11144c" stroke-width="3"/>
+              <rect x="20" y="20" width="160" height="25" fill="#11144c"/>
+              <circle cx="35" cy="32.5" r="4" fill="#f2f1e8"/>
+              <circle cx="50" cy="32.5" r="4" fill="#f2f1e8"/>
+              <rect x="40" y="55" width="120" height="60" fill="#f2f1e8" stroke="#11144c" stroke-width="2"/>
+            </svg>
+          </div>
+        </div>
+        <p class="track-card-desc">Master full-stack web development, from UI to backend deployment.</p>
+      </article>
+
+      <!-- Track 2: UI/UX Design -->
+      <article class="track-card track-card--indigo">
+        <div class="track-card-dot track-card-dot--tl track-card-dot--square" aria-hidden="true"></div>
+        <div class="track-card-header">
+          <h3 class="track-card-title track-card-title--light">UI/UX<br/>Design</h3>
+          <div class="track-card-graphic track-card-graphic--white">
+            <svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg" class="animate-drift" style="animation-delay:1s" aria-hidden="true">
+              <defs>
+                <pattern id="wfGrid" patternUnits="userSpaceOnUse" width="20" height="20">
+                  <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#11144c" stroke-width="0.5" opacity="0.5"/>
+                </pattern>
+              </defs>
+              <rect width="200" height="150" fill="url(#wfGrid)"/>
+              <rect x="20" y="20" width="60" height="40" fill="#c4f383" stroke="#11144c" stroke-width="2"/>
+              <rect x="100" y="20" width="80" height="40" fill="none" stroke="#11144c" stroke-width="2"/>
+              <rect x="20" y="80" width="100" height="8" fill="#11144c"/>
+              <rect x="20" y="100" width="80" height="8" fill="#11144c"/>
+            </svg>
+          </div>
+        </div>
+        <p class="track-card-desc track-card-desc--light">Design systems and interfaces built for clarity, impact, and real users.</p>
+      </article>
+
+      <!-- Track 3: Competitive Programming -->
+      <article class="track-card track-card--white">
+        <div class="track-card-header">
+          <h3 class="track-card-title">Competitive<br/>Programming</h3>
+          <div class="track-card-graphic">
+            <svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg" class="animate-drift" style="animation-delay:0.5s" aria-hidden="true">
+              <rect x="20" y="15" width="160" height="120" fill="#11144c" stroke="#c4f383" stroke-width="4"/>
+              <text x="35" y="45" fill="#c4f383" font-family="monospace" font-size="16" font-weight="bold">&gt; run_</text>
+              <rect x="35" y="65" width="60" height="4" fill="#c4f383"/>
+              <rect x="35" y="85" width="40" height="4" fill="#c4f383"/>
+              <rect x="35" y="105" width="80" height="4" fill="#c4f383" opacity="0.4"/>
+            </svg>
+          </div>
+        </div>
+        <p class="track-card-desc">Sharpen your algorithmic thinking and compete at the highest level.</p>
+      </article>
+
+      <!-- Track 4: Business Plan -->
+      <article class="track-card track-card--lime">
+        <div class="track-card-dot track-card-dot--br" aria-hidden="true"></div>
+        <div class="track-card-header">
+          <h3 class="track-card-title">Business<br/>Plan</h3>
+          <div class="track-card-graphic track-card-graphic--white">
+            <svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg" class="animate-drift" style="animation-delay:1.5s" aria-hidden="true">
+              <rect x="25" y="100" width="25" height="30" fill="#4f53a8" stroke="#11144c" stroke-width="2"/>
+              <rect x="70" y="70"  width="25" height="60" fill="#4f53a8" stroke="#11144c" stroke-width="2"/>
+              <rect x="115" y="40" width="25" height="90" fill="#11144c" stroke="#11144c" stroke-width="2"/>
+              <polyline points="25,90 70,50 115,20 160,10" fill="none" stroke="#c4f383" stroke-width="6" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+        <p class="track-card-desc">Pitch your tech startup idea and chart a path to real growth.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .tracks-section {
+    position: relative;
+    padding-block: clamp(4rem, 8vw, 7rem);
+    border-bottom: 2px dashed var(--color-navy);
+    overflow: hidden;
+  }
+
+  /* Ghost background label */
+  .tracks-ghost {
+    position: absolute;
+    top: 0;
+    right: -2rem;
+    font-size: clamp(6rem, 16vw, 11rem);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+    color: var(--color-navy);
+    opacity: 0.04;
+  }
+
+  /* Section heading */
+  .tracks-heading {
+    position: relative;
+    display: inline-block;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(2rem, 6vw, 4.5rem);
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    margin-bottom: clamp(2.5rem, 5vw, 4rem);
+    color: var(--color-navy);
+    z-index: 1;
+  }
+  .tracks-heading-text {
+    position: relative;
+    z-index: 2;
+  }
+  .tracks-heading-accent {
+    position: absolute;
+    bottom: 6px;
+    left: 0;
+    width: 100%;
+    height: 12px;
+    background: rgba(196, 243, 131, 0.65);
+    z-index: 1;
+    transform: rotate(-0.7deg);
+  }
+
+  /* 2×2 track grid */
+  .tracks-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(1.5rem, 3vw, 2rem);
+  }
+  @media (min-width: 640px) {
+    .tracks-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* Card base */
+  .track-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-6);
+    border: 2px solid var(--color-navy);
+    transition: transform 0.25s ease;
+  }
+  .track-card:hover { transform: rotate(1.5deg) scale(1.015); }
+
+  /* Card color variants */
+  .track-card--white  { background: var(--color-white); }
+  .track-card--indigo { background: var(--color-indigo); }
+  .track-card--lime   { background: var(--color-lime); }
+
+  /* Corner dot decorations */
+  .track-card-dot {
+    position: absolute;
+    width: 28px; height: 28px;
+    background: var(--color-lime);
+    border: 2px solid var(--color-navy);
+    border-radius: 50%;
+    z-index: 2;
+  }
+  .track-card-dot--tr { top: -12px; right: -12px; }
+  .track-card-dot--tl { top: -12px; left: -12px; border-radius: 0; transform: rotate(45deg); }
+  .track-card-dot--br { bottom: -12px; right: -12px; border-radius: 2px; background: var(--color-navy); }
+
+  /* Card header (title + graphic) */
+  .track-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--space-4);
+    padding-bottom: var(--space-6);
+    border-bottom: 2px solid var(--color-navy);
+    margin-bottom: var(--space-4);
+  }
+
+  /* Card title */
+  .track-card-title {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+    line-height: 0.88;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    color: var(--color-navy);
+    width: 50%;
+    transition: color 0.2s ease;
+  }
+  .track-card:hover .track-card-title { color: var(--color-indigo); }
+  .track-card--indigo:hover .track-card-title { color: var(--color-lime); }
+  .track-card--lime:hover    .track-card-title { color: var(--color-white); }
+
+  .track-card-title--light { color: var(--color-white); }
+  .track-card--indigo:hover .track-card-title--light { color: var(--color-lime); }
+
+  /* Card graphic container */
+  .track-card-graphic {
+    width: 45%;
+    aspect-ratio: 4/3;
+    flex-shrink: 0;
+  }
+  .track-card-graphic--white {
+    background: var(--color-white);
+    border: 2px solid var(--color-navy);
+  }
+  .track-card-graphic svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Card description */
+  .track-card-desc {
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    line-height: 1.5;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-navy);
+    opacity: 0.85;
+    margin-top: auto;
+  }
+  .track-card-desc--light {
+    color: var(--color-white);
+    opacity: 0.9;
+  }
+</style>

@@ -1,0 +1,117 @@
+---
+// PrizepoolSection.astro — Total prize pool showcase
+---
+
+<section class="prize-section" id="prizepool">
+  <!-- Dot-pattern texture overlay -->
+  <div class="prize-dots" aria-hidden="true"></div>
+
+  <div class="container prize-inner">
+    <h2 class="prize-label">Total Prizepool</h2>
+
+    <div class="prize-amount-wrap">
+      <!-- "WOW!" sticker -->
+      <span class="prize-wow-badge sticker" aria-hidden="true">WOW!</span>
+
+      <div class="prize-amount">
+        IDR 5,000,000
+        <!-- Spinning badge -->
+        <div class="prize-spin-wrap animate-spin-slow" aria-hidden="true">
+          <span class="prize-spin-badge sticker">★ PRIZE ★</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .prize-section {
+    position: relative;
+    padding-block: clamp(5rem, 10vw, 9rem);
+    border-bottom: 2px dashed var(--color-navy);
+    overflow: hidden;
+    /* Dot-pattern background via inline pseudo */
+    background-color: var(--color-offwhite);
+  }
+
+  /* Subtle dot-pattern overlay using CSS background-image */
+  .prize-dots {
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Ccircle cx='2' cy='2' r='1' fill='%2311144c' opacity='0.1'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .prize-inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--space-6);
+  }
+
+  /* "TOTAL PRIZEPOOL" label */
+  .prize-label {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(2.25rem, 7vw, 5.5rem);
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+    color: var(--color-indigo);
+    line-height: 0.9;
+    transform: rotate(-2deg);
+    mix-blend-mode: multiply;
+  }
+
+  /* Amount row */
+  .prize-amount-wrap {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* "WOW!" badge — positioned above-left */
+  .prize-wow-badge {
+    position: absolute;
+    top: -2rem;
+    left: -2rem;
+    font-size: clamp(0.875rem, 2vw, 1.25rem);
+    transform: rotate(12deg);
+    z-index: 2;
+  }
+
+  /* Massive prize amount */
+  .prize-amount {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(2.5rem, 9vw, 7rem);
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+    line-height: 0.88;
+    color: var(--color-navy);
+    transform: rotate(1deg);
+    /* Lime drop shadow = flat neo-brutalist depth */
+    filter: drop-shadow(8px 8px 0 #c4f383);
+    position: relative;
+  }
+
+  /* Spinning badge */
+  .prize-spin-wrap {
+    position: absolute;
+    right: clamp(-3rem, -5vw, -5rem);
+    top: 50%;
+    transform-origin: center;
+  }
+
+  .prize-spin-badge {
+    font-size: clamp(0.75rem, 1.5vw, 1rem);
+    display: inline-block;
+    /* Override sticker rotation so the spin-slow animation controls it */
+    transform: none;
+    animation: spin-slow 12s linear infinite;
+  }
+</style>

@@ -1,0 +1,175 @@
+---
+// Header.astro — Sticky navigation bar
+---
+
+<header class="site-header">
+  <div class="header-inner">
+    <!-- Logo -->
+    <a href="/" class="logo" aria-label="Veternity Beraksi home">
+      <span class="logo-line1">VETERNITY</span>
+      <span class="logo-line2">BERAKSI</span>
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#hero"      class="nav-link">Home</a>
+      <a href="#about"     class="nav-link">About Us</a>
+      <a href="#faq"       class="nav-link">FAQs</a>
+      <a href="#contact"   class="nav-link">Contact</a>
+    </nav>
+
+    <!-- CTA -->
+    <a href="#tracks" class="btn-primary header-cta">Join Now</a>
+
+    <!-- Mobile hamburger (CSS-only toggle) -->
+    <input type="checkbox" id="menu-toggle" class="menu-toggle-input" aria-hidden="true" />
+    <label for="menu-toggle" class="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </label>
+
+    <!-- Mobile nav drawer -->
+    <div class="mobile-nav" role="navigation" aria-label="Mobile navigation">
+      <a href="#hero"    class="mobile-nav-link">Home</a>
+      <a href="#about"   class="mobile-nav-link">About Us</a>
+      <a href="#faq"     class="mobile-nav-link">FAQs</a>
+      <a href="#contact" class="mobile-nav-link">Contact</a>
+      <a href="#tracks"  class="btn-primary" style="align-self:flex-start;margin-top:8px;">Join Now</a>
+    </div>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    width: 100%;
+    background-color: rgba(242, 241, 232, 0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 2px solid var(--color-navy);
+    box-shadow: 0 4px 0 var(--color-navy);
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-6);
+    padding: 0.75rem var(--space-5);
+    max-width: 1280px;
+    margin-inline: auto;
+    position: relative;
+  }
+
+  @media (min-width: 768px) {
+    .header-inner { padding-inline: var(--space-8); }
+  }
+  @media (min-width: 1024px) {
+    .header-inner { padding-inline: var(--space-16); }
+  }
+
+  /* Logo */
+  .logo {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.25rem;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    transition: transform 0.2s ease;
+  }
+  .logo:hover { transform: scale(1.05); }
+  .logo-line1 { color: var(--color-navy); }
+  .logo-line2 { color: var(--color-indigo); }
+
+  /* Desktop nav links */
+  .nav-links {
+    display: none;
+    gap: var(--space-8);
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+  @media (min-width: 768px) {
+    .nav-links { display: flex; }
+  }
+  .nav-link {
+    position: relative;
+    padding-bottom: 2px;
+    transition: color 0.2s ease;
+  }
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 0; height: 2px;
+    background: var(--color-indigo);
+    transition: width 0.2s ease;
+  }
+  .nav-link:hover { color: var(--color-indigo); }
+  .nav-link:hover::after { width: 100%; }
+
+  /* Header CTA */
+  .header-cta {
+    display: none;
+  }
+  @media (min-width: 768px) {
+    .header-cta { display: inline-block; }
+  }
+
+  /* Mobile hamburger (CSS-only) */
+  .menu-toggle-input {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+  }
+  @media (min-width: 768px) {
+    .hamburger { display: none; }
+  }
+  .hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--color-navy);
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  /* Mobile nav drawer */
+  .mobile-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0; right: 0;
+    background: var(--color-offwhite);
+    border-bottom: 2px solid var(--color-navy);
+    padding: var(--space-6);
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+  .menu-toggle-input:checked ~ .mobile-nav {
+    display: flex;
+  }
+  @media (min-width: 768px) {
+    .mobile-nav { display: none !important; }
+  }
+
+  .mobile-nav-link {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: var(--space-2) 0;
+    border-bottom: 1px solid var(--color-navy);
+    transition: color 0.2s ease;
+  }
+  .mobile-nav-link:hover { color: var(--color-indigo); }
+</style>

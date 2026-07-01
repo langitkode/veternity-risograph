@@ -1,0 +1,353 @@
+/* ============================================================
+   VETERNITY BERAKSI — Global Design System
+   Risograph Editorial / Neo-Brutalist aesthetic
+   ============================================================ */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+/* ============================================================
+   1. DESIGN TOKENS (CSS Custom Properties)
+   ============================================================ */
+:root {
+  /* Color Palette */
+  --color-navy:      #11144c;
+  --color-indigo:    #4f53a8;
+  --color-lime:      #c4f383;
+  --color-offwhite:  #f2f1e8;
+  --color-white:     #ffffff;
+
+  /* Surface Tokens (from DESIGN.md) */
+  --surface:                   #fcf8f9;
+  --surface-container-low:     #f6f3f4;
+  --surface-container:         #f1edee;
+  --surface-container-high:    #ebe7e8;
+  --surface-container-highest: #e5e1e2;
+  --on-surface:                #1c1b1c;
+  --outline:                   #77767f;
+  --outline-variant:           #c7c5cf;
+  --primary-container:         #16183a;
+  --secondary-container:       #bcf540;
+
+  /* Typography */
+  --font-display: 'Sora', sans-serif;
+  --font-body:    'Inter', sans-serif;
+  --font-mono:    'JetBrains Mono', monospace;
+
+  /* Spacing (4px unit system) */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+
+  /* Neo-brutalist shadow (hard offset, no blur) */
+  --shadow-sm: 2px 2px 0px var(--color-navy);
+  --shadow-md: 4px 4px 0px var(--color-navy);
+  --shadow-lg: 6px 6px 0px var(--color-navy);
+  --shadow-lime: 8px 8px 0px var(--color-lime);
+}
+
+/* ============================================================
+   2. RESET & BASE
+   ============================================================ */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--color-offwhite);
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--color-navy);
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ============================================================
+   3. TYPOGRAPHY SCALE
+   ============================================================ */
+
+/* Display XL — hero headlines */
+.text-display-xl {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 14vw, 12.5rem); /* 48px → 200px */
+  font-weight: 800;
+  line-height: 0.88;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
+
+/* Headline LG — section titles */
+.text-headline-lg {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3rem); /* 32px → 48px */
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+/* Headline MD */
+.text-headline-md {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+/* Number XL — timeline numbering */
+.text-number-xl {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 800;
+  line-height: 1;
+  color: var(--color-indigo);
+  text-shadow: 4px 4px 0px var(--color-navy);
+}
+
+/* Body */
+.text-body-lg {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.text-body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.text-body-sm {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Label / Mono */
+.text-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   4. LAYOUT UTILITIES
+   ============================================================ */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: var(--space-5);
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-inline: var(--space-8);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-inline: var(--space-16);
+  }
+}
+
+/* ============================================================
+   5. COMPONENT CLASSES
+   ============================================================ */
+
+/* Neo-brutalist card container */
+.neo-card {
+  border: 2px solid var(--color-navy);
+  background: var(--color-white);
+  position: relative;
+}
+
+/* Sticker / Badge */
+.sticker {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background-color: var(--color-lime);
+  color: var(--color-navy);
+  border: 2px solid var(--color-navy);
+  border-radius: 9999px;
+  padding: 0.25rem 0.875rem;
+  box-shadow: var(--shadow-sm);
+  transform: rotate(-10deg);
+}
+
+/* Button — Primary (lime) */
+.btn-primary {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background-color: var(--color-lime);
+  color: var(--color-navy);
+  border: 2px solid var(--color-navy);
+  border-radius: 9999px;
+  padding: 0.5rem 1.5rem;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  white-space: nowrap;
+}
+.btn-primary:hover {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+
+/* Button — Hero CTA (large, rectangular) */
+.btn-hero {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.125rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background-color: var(--color-white);
+  color: var(--color-navy);
+  border: 2px solid var(--color-navy);
+  padding: 1rem 2.5rem;
+  box-shadow: var(--shadow-lg);
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.btn-hero:hover {
+  transform: translate(4px, 4px);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Halftone dot pattern */
+.halftone-bg {
+  background-image: radial-gradient(var(--color-navy) 20%, transparent 20%);
+  background-size: 10px 10px;
+  opacity: 0.08;
+}
+
+/* Oversized ghost label */
+.ghost-label {
+  font-family: var(--font-display);
+  font-size: clamp(5rem, 14vw, 10rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--color-navy);
+  opacity: 0.04;
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+  mix-blend-mode: multiply;
+}
+
+/* Section divider */
+.section-divider {
+  border: none;
+  border-top: 2px dashed var(--color-navy);
+}
+
+/* ============================================================
+   6. ANIMATIONS (performance: use transform/opacity only)
+   ============================================================ */
+@keyframes drift {
+  0%   { transform: translateY(0px) rotate(0deg); }
+  50%  { transform: translateY(-10px) rotate(5deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-drift {
+  animation: drift 6s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 12s linear infinite;
+  will-change: transform;
+}
+
+/* Hover utilities */
+.hover-lift {
+  transition: transform 0.2s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-4px);
+}
+
+.hover-rotate {
+  transition: transform 0.3s ease;
+}
+.hover-rotate:hover {
+  transform: rotate(2deg) scale(1.02);
+}
+
+/* ============================================================
+   7. ACCESSIBILITY
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .animate-drift,
+  .animate-spin-slow {
+    animation: none;
+  }
+  .hover-lift,
+  .hover-rotate {
+    transition: none;
+  }
+}
+
+/* Focus visible ring */
+:focus-visible {
+  outline: 2px solid var(--color-lime);
+  outline-offset: 2px;
+}
