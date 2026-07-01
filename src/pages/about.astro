@@ -1,0 +1,352 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ShaderBackground from '../components/ShaderBackground.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="About Us — Veternity Beraksi"
+  description="Learn more about the team behind Veternity Beraksi, our mission to foster technical excellence, and the organizers making this competition possible."
+>
+  <ShaderBackground />
+  <div class="halftone-overlay" aria-hidden="true"></div>
+
+  <Header />
+
+  <main id="main-content">
+    <!-- Hero Header -->
+    <section class="about-hero">
+      <div class="ghost-label about-ghost" aria-hidden="true">ABOUT</div>
+      <div class="container relative z-10">
+        <h1 class="about-title">
+          <span class="about-title-line1">WE SHAPE</span>
+          <span class="about-title-line2">THE FUTURE</span>
+        </h1>
+        <p class="about-sub">
+          Veternity Beraksi is more than a competition. It is a launchpad for the next generation of digital builders, designers, and business strategists in Indonesia.
+        </p>
+      </div>
+    </section>
+
+    <!-- Mission & Core Values Section -->
+    <section class="about-core">
+      <div class="container">
+        <div class="core-grid">
+          
+          <!-- Card 1: Our Mission -->
+          <div class="core-card">
+            <div class="core-badge sticker">OUR MISSION</div>
+            <h3 class="core-card-title">Empower Innovation</h3>
+            <p class="core-card-text">
+              We provide a highly competitive platform designed to challenge students and tech enthusiasts. Through real-world problem-solving, we bridge the gap between academic theory and industry excellence.
+            </p>
+            <div class="connector-line" aria-hidden="true"><div class="connector-dot"></div></div>
+          </div>
+
+          <!-- Card 2: Our Values -->
+          <div class="core-card core-card--indigo">
+            <div class="core-badge sticker sticker--lime">CORE VALUES</div>
+            <h3 class="core-card-title text-lime">Rigor &amp; Craft</h3>
+            <p class="core-card-text text-white">
+              We reject mediocrity. We value clean code, pixel-perfect interfaces, structured business plans, and robust algorithms. Excellence is not an accident; it is a discipline.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- The Team / Organizers Section -->
+    <section class="about-team">
+      <div class="container">
+        <h2 class="section-title">
+          <span class="section-title-text">THE ORGANIZERS</span>
+          <span class="section-title-accent"></span>
+        </h2>
+
+        <div class="team-grid">
+          <!-- Member 1 -->
+          <div class="team-card">
+            <div class="team-avatar-wrap">
+              <svg viewBox="0 0 100 100" class="team-avatar-svg" aria-hidden="true">
+                <rect width="100" height="100" fill="#c4f383" stroke="#11144c" stroke-width="3"/>
+                <circle cx="50" cy="50" r="30" fill="#4f53a8" stroke="#11144c" stroke-width="2"/>
+                <path d="M 20 85 Q 50 60 80 85 Z" fill="#11144c"/>
+              </svg>
+            </div>
+            <h4 class="team-name">Veternity Beraksi</h4>
+            <span class="team-role text-label">Executive Committee</span>
+          </div>
+
+          <!-- Member 2 -->
+          <div class="team-card">
+            <div class="team-avatar-wrap">
+              <svg viewBox="0 0 100 100" class="team-avatar-svg" aria-hidden="true">
+                <rect width="100" height="100" fill="#4f53a8" stroke="#11144c" stroke-width="3"/>
+                <circle cx="50" cy="45" r="25" fill="#f2f1e8" stroke="#11144c" stroke-width="2"/>
+                <rect x="25" y="70" width="50" height="30" rx="10" fill="#c4f383" stroke="#11144c" stroke-width="2"/>
+              </svg>
+            </div>
+            <h4 class="team-name">Competition Jelo Hlit</h4>
+            <span class="team-role text-label">Operations Lead</span>
+          </div>
+
+          <!-- Member 3 -->
+          <div class="team-card">
+            <div class="team-avatar-wrap">
+              <svg viewBox="0 0 100 100" class="team-avatar-svg" aria-hidden="true">
+                <rect width="100" height="100" fill="#ffffff" stroke="#11144c" stroke-width="3"/>
+                <polygon points="50,15 85,80 15,80" fill="#c4f383" stroke="#11144c" stroke-width="2"/>
+                <circle cx="50" cy="55" r="15" fill="#4f53a8" stroke="#11144c" stroke-width="2"/>
+              </svg>
+            </div>
+            <h4 class="team-name">IT Division Team</h4>
+            <span class="team-role text-label">Technical &amp; Jurors</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .halftone-overlay {
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(#11144c 20%, transparent 20%);
+    background-size: 10px 10px;
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  :global(html) {
+    scroll-padding-top: 72px;
+  }
+
+  /* About Hero */
+  .about-hero {
+    position: relative;
+    padding-top: clamp(4rem, 8vw, 6rem);
+    padding-bottom: clamp(3rem, 6vw, 4.5rem);
+    border-bottom: 2px dashed var(--color-navy);
+    overflow: hidden;
+  }
+
+  .about-ghost {
+    position: absolute;
+    top: 50%;
+    right: -2rem;
+    transform: translateY(-50%);
+    font-size: clamp(6rem, 18vw, 12rem);
+    line-height: 1;
+    z-index: 0;
+  }
+
+  .about-title {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-display);
+    font-weight: 800;
+    line-height: 0.88;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-6);
+  }
+
+  .about-title-line1 {
+    font-size: clamp(3rem, 10vw, 8rem);
+    color: var(--color-navy);
+    transform: rotate(-1.5deg);
+    display: inline-block;
+  }
+
+  .about-title-line2 {
+    font-size: clamp(3rem, 10vw, 8rem);
+    color: var(--color-indigo);
+    transform: rotate(1deg);
+    margin-left: var(--space-4);
+    display: inline-block;
+    -webkit-text-stroke: 2px var(--color-navy);
+    paint-order: stroke fill;
+  }
+
+  .about-sub {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    font-weight: 500;
+    line-height: 1.6;
+    max-width: 38rem;
+    color: var(--color-navy);
+    opacity: 0.9;
+  }
+
+  /* Core Cards Section */
+  .about-core {
+    padding-block: clamp(4rem, 8vw, 6rem);
+    border-bottom: 2px dashed var(--color-navy);
+  }
+
+  .core-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(2rem, 4vw, 3rem);
+  }
+  @media (min-width: 768px) {
+    .core-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .core-card {
+    border: 2px solid var(--color-navy);
+    background: var(--color-white);
+    padding: var(--space-8);
+    position: relative;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .core-card--indigo {
+    background: var(--color-indigo);
+  }
+
+  .core-badge {
+    transform: rotate(-5deg) translateY(-10px);
+    margin-bottom: var(--space-4);
+  }
+  .sticker--lime {
+    background-color: var(--color-lime);
+  }
+
+  .core-card-title {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    color: var(--color-navy);
+    margin-bottom: var(--space-4);
+  }
+
+  .core-card-text {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    opacity: 0.85;
+  }
+
+  /* Connector line style from DESIGN.md */
+  .connector-line {
+    position: absolute;
+    bottom: -2px;
+    right: 40px;
+    width: 2px;
+    height: 40px;
+    background: var(--color-navy);
+    display: none;
+  }
+  @media (min-width: 768px) {
+    .connector-line {
+      display: block;
+    }
+  }
+  .connector-dot {
+    position: absolute;
+    bottom: -8px;
+    left: -4px;
+    width: 10px;
+    height: 10px;
+    background: var(--color-lime);
+    border: 2px solid var(--color-navy);
+    border-radius: 50%;
+  }
+
+  /* Team Section */
+  .about-team {
+    padding-block: clamp(4rem, 8vw, 6rem);
+  }
+
+  .section-title {
+    position: relative;
+    display: inline-block;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    margin-bottom: clamp(2.5rem, 5vw, 4rem);
+    color: var(--color-navy);
+    z-index: 1;
+  }
+  .section-title-text {
+    position: relative;
+    z-index: 2;
+  }
+  .section-title-accent {
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: rgba(196, 243, 131, 0.65);
+    z-index: 1;
+    transform: rotate(-0.5deg);
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+  @media (min-width: 640px) {
+    .team-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .team-card {
+    border: 2px solid var(--color-navy);
+    background: var(--color-white);
+    padding: var(--space-6);
+    box-shadow: var(--shadow-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.2s ease;
+  }
+  .team-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .team-avatar-wrap {
+    width: 120px;
+    height: 120px;
+    margin-bottom: var(--space-4);
+  }
+  .team-avatar-svg {
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--color-navy);
+  }
+
+  .team-name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    color: var(--color-navy);
+    margin-bottom: var(--space-1);
+  }
+
+  .team-role {
+    font-size: 0.6875rem;
+    color: var(--color-indigo);
+  }
+</style>

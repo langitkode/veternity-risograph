@@ -124,7 +124,7 @@
     letter-spacing: -0.04em;
     text-transform: uppercase;
     margin: 0;
-    mix-blend-mode: multiply;
+    /* No mix-blend-mode here — indigo text + indigo SVG circle = invisible */
   }
 
   .hero-title-line1 {
@@ -140,6 +140,9 @@
     transform: rotate(1deg);
     margin-left: clamp(0.5rem, 2vw, 1.5rem);
     display: inline-block;
+    /* Navy outline keeps every letter legible over the indigo SVG circle */
+    -webkit-text-stroke: 2px var(--color-navy);
+    paint-order: stroke fill;
   }
 
   /* Sub-headline */
