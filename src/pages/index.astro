@@ -1,51 +1,51 @@
 ---
 // src/pages/index.astro — Main landing page
-import BaseLayout from '../layouts/BaseLayout.astro';
-import ShaderBackground from '../components/ShaderBackground.astro';
-import Header from '../components/Header.astro';
-import HeroSection from '../components/HeroSection.astro';
-import TracksSection from '../components/TracksSection.astro';
-import PrizepoolSection from '../components/PrizepoolSection.astro';
-import InfoSection from '../components/InfoSection.astro';
-import Footer from '../components/Footer.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ShaderBackground from "../components/ShaderBackground.astro";
+import Header from "../components/Header.astro";
+import HeroSection from "../components/HeroSection.astro";
+import TracksSection from "../components/TracksSection.astro";
+import PrizepoolSection from "../components/PrizepoolSection.astro";
+import InfoSection from "../components/InfoSection.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <BaseLayout
-  title="Veternity Beraksi — IT Competition 2024"
-  description="Veternity Beraksi is a premier IT competition featuring Web Development, UI/UX Design, Competitive Programming, and Business Plan tracks. Win IDR 5,000,000 in prizes."
+    title="Veternity Beraksi - IT Competition 2026"
+    description="Veternity Beraksi is a premier IT competition featuring Web Development, UI/UX Design, Competitive Programming, and Business Plan tracks. Win IDR 5,000,000 in prizes."
 >
-  <!-- WebGL paper grain + halftone shader — fixed position, z-index: -2 -->
-  <ShaderBackground />
+    <!-- WebGL paper grain + halftone shader — fixed position, z-index: -2 -->
+    <ShaderBackground />
 
-  <!-- Halftone dot overlay — complements shader with a CSS-only static layer -->
-  <div class="halftone-overlay" aria-hidden="true"></div>
+    <!-- Halftone dot overlay — complements shader with a CSS-only static layer -->
+    <div class="halftone-overlay" aria-hidden="true"></div>
 
-  <Header />
+    <Header />
 
-  <main id="main-content">
-    <HeroSection />
-    <TracksSection />
-    <PrizepoolSection />
-    <InfoSection />
-  </main>
+    <main id="main-content">
+        <HeroSection />
+        <TracksSection />
+        <PrizepoolSection />
+        <InfoSection />
+    </main>
 
-  <Footer />
+    <Footer />
 </BaseLayout>
 
 <style>
-  /* Halftone overlay — sits between shader and content */
-  .halftone-overlay {
-    position: fixed;
-    inset: 0;
-    background-image: radial-gradient(#11144c 20%, transparent 20%);
-    background-size: 10px 10px;
-    opacity: 0.05;
-    pointer-events: none;
-    z-index: -1;
-  }
+    /* Halftone overlay — sits between shader and content */
+    .halftone-overlay {
+        position: fixed;
+        inset: 0;
+        background-image: radial-gradient(#11144c 20%, transparent 20%);
+        background-size: 10px 10px;
+        opacity: 0.05;
+        pointer-events: none;
+        z-index: -1;
+    }
 
-  /* Scroll padding for sticky header */
-  :global(html) {
-    scroll-padding-top: 72px;
-  }
+    /* Scroll padding for sticky header */
+    :global(html) {
+        scroll-padding-top: 72px;
+    }
 </style>
